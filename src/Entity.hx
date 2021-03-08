@@ -295,6 +295,10 @@ class Entity {
 		return !destroyed && life > 0;
 	}
 
+	public function setExtraCollision(enabled: Bool) {
+		level.setExtraCollision(cx, cy, enabled);
+	}
+
 	/** Move entity to grid coordinates **/
 	public function setPosCase(x: Int, y: Int) {
 		cx = x;

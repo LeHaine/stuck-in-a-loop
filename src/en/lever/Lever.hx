@@ -9,15 +9,15 @@ enum LeverDirection {
 	Right;
 }
 
-class Lever extends Trigger {
+class Lever extends Actionable {
 
 	public var direction = LeverDirection.Right;
 	public var locked = false;
 
 	private var machine: StateMachine<Lever>;
 
-	public function new(x, y) {
-		super(x, y);
+	public function new(x, y, actionId) {
+		super(x, y, false, actionId, -1);
 		hasCollision = false;
 		machine = new StateMachine<Lever>(this);
 		machine.addState(new LeverLockedState());

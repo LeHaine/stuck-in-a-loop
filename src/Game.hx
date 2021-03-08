@@ -1,3 +1,5 @@
+import en.gate.Gate;
+import en.block.Block;
 import en.lever.Lever;
 import en.hero.Hero;
 import dn.Process;
@@ -74,7 +76,15 @@ class Game extends Process {
 			new Exit(exit.cx, exit.cy);
 		}
 		for (lever in l.l_Entities.all_Lever) {
-			new Lever(lever.cx, lever.cy);
+			new Lever(lever.cx, lever.cy, lever.f_action_id);
+		}
+
+		for (block in l.l_Entities.all_Block) {
+			new Block(block.cx, block.cy, block.f_optional, -1, -1, LPoint.fromCase(block.f_Goal[0].cx, block.f_Goal[0].cy));
+		}
+
+		for (gate in l.l_Entities.all_Gate) {
+			new Gate(gate.cx, gate.cy, gate.f_opened, gate.f_alignment, gate.f_reaction_id);
 		}
 		camera.recenter();
 		hud.onLevelStart();

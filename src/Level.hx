@@ -1,3 +1,5 @@
+import format.pdf.Extract;
+
 class Level extends dn.Process {
 
 	var game(get, never): Game;
@@ -28,6 +30,8 @@ class Level extends dn.Process {
 
 	inline function get_pxHei() return cHei * Const.GRID;
 
+	var extraCollison: Map<Int, Bool>;
+
 	public var data: World.World_Level;
 
 	public var startPoint: LPoint;
@@ -43,6 +47,7 @@ class Level extends dn.Process {
 		createRootInLayers(Game.ME.scroller, Const.DP_BG);
 		data = ldtkLevel;
 		tilesetSource = hxd.Res.world.tiles.toTile();
+		extraCollison = new Map<Int, Bool>();
 	}
 
 	override function onDispose() {
@@ -85,7 +90,17 @@ class Level extends dn.Process {
 
 	/** Return TRUE if "Collisions" layer contains a collision value **/
 	public inline function hasCollision(cx, cy): Bool {
-		return !isValid(cx, cy) ? true : data.l_Collisions.getInt(cx, cy) == 1;
+		return !isValid(cx, cy) ? true : data.l_Collisions.getInt(cx, cy) == 1 || extraCollison.exists(coordId(cx, cy));
+	}
+
+	public function setExtraCollision(cx, cy, enabled: Bool) {
+		if (isValid(cx, cy)) {
+			if (enabled) {
+				extraCollison.set(coordId(cx, cy), true);
+			} else {
+				extraCollison.remove(coordId(cx, cy));
+			}
+		}
 	}
 
 	/** Render current level**/
