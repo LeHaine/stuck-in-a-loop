@@ -1,3 +1,4 @@
+import en.hero.Hero;
 import dn.Process;
 import hxd.Key;
 
@@ -22,6 +23,8 @@ class Game extends Process {
 
 	/** UI **/
 	public var hud: ui.Hud;
+
+	public var hero: Hero;
 
 	/** Slow mo internal values**/
 	var curGameSpeed = 1.0;
@@ -62,6 +65,8 @@ class Game extends Process {
 
 		level = new Level(l);
 		// <---- Here: instanciate your level entities
+		var heroData = l.l_Entities.all_Hero[0];
+		hero = new Hero(heroData.cx, heroData.cy);
 
 		camera.recenter();
 		hud.onLevelStart();
@@ -208,8 +213,9 @@ class Game extends Process {
 
 			// Attach debug drone (CTRL-SHIFT-D)
 			#if debug
-			if (ca.isKeyboardPressed(K.D)) // && ca.isKeyboardDown(K.CTRL) && ca.isKeyboardDown(K.SHIFT) ) {
+			if (ca.isKeyboardPressed(K.D) && ca.isKeyboardDown(K.CTRL)) {
 				new en.DebugDrone(); // <-- HERE: provide an Entity as argument to attach Drone near it
+			}
 			#end
 
 			// Restart whole game
