@@ -1,0 +1,23 @@
+{
+    "emptyLines": {
+        "abstractEmptyLines": {
+            "beginType": 1
+        },
+        "afterLeftCurly": "keep",
+        "classEmptyLines": {
+            "beginType": 1
+        }
+    },
+    "whitespace": {
+        "colonPolicy": "none",
+        "caseColonPolicy": "around",
+        "objectFieldColonPolicy": "after",
+        "typeHintColonPolicy": "onlyAfter",
+        "typeCheckColonPolicy": "onlyAfter",
+        "ternaryPolicy": "around"
+    },
+    "sameLine": {
+        "functionBody": "same",
+        "anonFunctionBody": "same"
+    }
+}

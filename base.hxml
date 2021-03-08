@@ -1,0 +1,7 @@
+-cp src
+-lib castle:git:https://github.com/ncannasse/castle.git
+-lib heaps:git:https://github.com/HeapsIO/heaps.git
+-lib deepnightLibs:git:https://github.com/deepnight/deepnightLibs.git
+-lib ldtk-haxe-api:0.8.1-rc.1
+-main Boot
+-dce full
