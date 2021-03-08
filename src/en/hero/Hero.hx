@@ -39,8 +39,10 @@ class Hero extends Entity {
 		machine.addState(new HeroRunState());
 		machine.addState(new HeroIdleState());
 		machine.onStateChanged = (stateName) -> {
+			#if debug
 			var state = stateName.split(".").pop();
 			debug(state);
+			#end
 		}
 		camera.trackEntity(this, true);
 		addGraphcisSquare(Color.pickUniqueColorFor("hero"));
