@@ -734,7 +734,16 @@
 									"defUid": 34,
 									"realEditorValues": [{ "id": "V_Int", "params": [1] }]
 								},
-								{ "__identifier": "optional", "__value": false, "__type": "Bool", "defUid": 41, "realEditorValues": [] }
+								{
+									"__identifier": "optional",
+									"__value": true,
+									"__type": "Bool",
+									"defUid": 41,
+									"realEditorValues": [{
+										"id": "V_Bool",
+										"params": [ true ]
+									}]
+								}
 							]
 						},
 						{
@@ -765,7 +774,16 @@
 									"defUid": 36,
 									"realEditorValues": [{ "id": "V_Int", "params": [1] }]
 								},
-								{ "__identifier": "optional", "__value": false, "__type": "Bool", "defUid": 42, "realEditorValues": [] }
+								{
+									"__identifier": "optional",
+									"__value": true,
+									"__type": "Bool",
+									"defUid": 42,
+									"realEditorValues": [{
+										"id": "V_Bool",
+										"params": [ true ]
+									}]
+								}
 							]
 						},
 						{
@@ -809,7 +827,16 @@
 									"realEditorValues": [{ "id": "V_Int", "params": [1] }]
 								},
 								{ "__identifier": "sticks", "__value": true, "__type": "Bool", "defUid": 39, "realEditorValues": [] },
-								{ "__identifier": "optional", "__value": false, "__type": "Bool", "defUid": 43, "realEditorValues": [] }
+								{
+									"__identifier": "optional",
+									"__value": true,
+									"__type": "Bool",
+									"defUid": 43,
+									"realEditorValues": [{
+										"id": "V_Bool",
+										"params": [ true ]
+									}]
+								}
 							]
 						},
 						{
@@ -839,7 +866,16 @@
 										"params": [ false ]
 									}]
 								},
-								{ "__identifier": "optional", "__value": false, "__type": "Bool", "defUid": 43, "realEditorValues": [] }
+								{
+									"__identifier": "optional",
+									"__value": true,
+									"__type": "Bool",
+									"defUid": 43,
+									"realEditorValues": [{
+										"id": "V_Bool",
+										"params": [ true ]
+									}]
+								}
 							]
 						},
 						{
@@ -870,7 +906,16 @@
 									"defUid": 36,
 									"realEditorValues": [{ "id": "V_Int", "params": [2] }]
 								},
-								{ "__identifier": "optional", "__value": false, "__type": "Bool", "defUid": 42, "realEditorValues": [] }
+								{
+									"__identifier": "optional",
+									"__value": true,
+									"__type": "Bool",
+									"defUid": 42,
+									"realEditorValues": [{
+										"id": "V_Bool",
+										"params": [ true ]
+									}]
+								}
 							]
 						}
 					]

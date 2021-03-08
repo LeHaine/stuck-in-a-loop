@@ -29,7 +29,7 @@ class Block extends Actionable {
 			debug(state);
 			#end
 		}
-		labelText = Lang.t._("Push");
+		labelText = Lang.t._("Push\nHold Shift for big push");
 		addGraphcisSquare(Color.pickUniqueColorFor("block"));
 	}
 
@@ -45,10 +45,17 @@ class Block extends Actionable {
 		}
 	}
 
-	public function push(from: Entity) {
-		pushX = -caseDirToX(from);
+	override function secondaryInteract(from: Entity) {
+		super.secondaryInteract(from);
+		if (pushX == 0 && pushY == 0) {
+			push(from, 2);
+		}
+	}
+
+	public function push(from: Entity, distance = 1) {
+		pushX = -caseDirToX(from) * distance;
 		if (pushX == 0) {
-			pushY = -caseDirToY(from);
+			pushY = -caseDirToY(from) * distance;
 		} else {
 			pushY = 0;
 		}

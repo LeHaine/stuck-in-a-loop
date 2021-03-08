@@ -19,6 +19,29 @@ class BlockMovingState extends State<Block> {
 		super.begin();
 		goalX = context.cx + context.pushX;
 		goalY = context.cy + context.pushY;
+		while (context.level.hasCollision(goalX, goalY)) {
+			if (context.pushX != 0) {
+				if (context.pushX > 0) {
+					goalX -= 1;
+				} else {
+					goalX += 1;
+				}
+			} else {
+				if (context.pushY > 0) {
+					goalY -= 1;
+				} else {
+					goalY += 1;
+				}
+			}
+
+			if (goalX == context.cx && goalY == context.cy) {
+				goalX = -1;
+				goalY = -1;
+				context.pushX = 0;
+				context.pushY = 0;
+				break;
+			}
+		}
 	}
 
 	override function update(tmod: Float) {

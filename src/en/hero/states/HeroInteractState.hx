@@ -12,6 +12,10 @@ class HeroInteractState extends HeroState {
 
 	override function begin() {
 		super.begin();
-		context.interact();
+		if (context.isSecondaryInteraction) {
+			context.interactSecondary();
+		} else {
+			context.interact();
+		}
 	}
 }

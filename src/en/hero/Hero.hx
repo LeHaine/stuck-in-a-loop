@@ -14,7 +14,13 @@ class Hero extends Entity {
 	public var canPerformInteraction(get, never): Bool;
 
 	public inline function get_canPerformInteraction(): Bool {
-		return interactableFocus != null && ca.isPressed(RB) && interactableFocus.canInteraction();
+		return interactableFocus != null && ca.isPressed(X) && interactableFocus.canInteraction();
+	}
+
+	public var isSecondaryInteraction(get, never): Bool;
+
+	public inline function get_isSecondaryInteraction(): Bool {
+		return canPerformInteraction && ca.isDown(RB);
 	}
 
 	public var running(get, never): Bool;
@@ -74,5 +80,9 @@ class Hero extends Entity {
 
 	public function interact() {
 		interactableFocus.interact(this);
+	}
+
+	public function interactSecondary() {
+		interactableFocus.secondaryInteract(this);
 	}
 }

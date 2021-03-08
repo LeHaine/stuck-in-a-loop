@@ -48,6 +48,8 @@ class Interactable extends Entity {
 
 	public function interact(from: Entity) {}
 
+	public function secondaryInteract(from: Entity) {}
+
 	public function canInteraction() {
 		return _canInteract && isHeroNear();
 	}
