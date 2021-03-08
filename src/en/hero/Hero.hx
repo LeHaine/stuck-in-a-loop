@@ -1,5 +1,7 @@
 package en.hero;
 
+import h2d.Graphics;
+import h3d.Vector;
 import en.hero.states.HeroRunState;
 import en.hero.states.HeroIdleState;
 
@@ -30,6 +32,9 @@ class Hero extends Entity {
 			var state = stateName.split(".").pop();
 			debug(state);
 		}
+		var graphics = new Graphics(spr);
+		graphics.beginFill(Color.pickUniqueColorFor("hero"));
+		graphics.drawRect(-wid * 0.5, -hei * 0.5, wid, hei);
 		camera.trackEntity(this, true);
 	}
 
