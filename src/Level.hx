@@ -36,13 +36,16 @@ class Level extends dn.Process {
 
 	public var startPoint: LPoint;
 
+	public var levelIdx: Int;
+
 	var tilesetSource: h2d.Tile;
 
 	var marks: Map<LevelMark, Map<Int, Bool>> = new Map();
 	var invalidated = true;
 
-	public function new(ldtkLevel: World.World_Level) {
+	public function new(ldtkLevel: World.World_Level, levelIdx: Int) {
 		super(Game.ME);
+		this.levelIdx = levelIdx;
 
 		createRootInLayers(Game.ME.scroller, Const.DP_BG);
 		data = ldtkLevel;

@@ -54,11 +54,11 @@ class Game extends Process {
 		hud = new ui.Hud();
 		camera = new Camera();
 
-		startLevel(worldData.all_levels.FirstLevel);
+		startLevel(worldData.levels[0], 0);
 	}
 
 	/** Load a level **/
-	function startLevel(l: World.World_Level) {
+	function startLevel(l: World.World_Level, levelIdx: Int) {
 		if (level != null)
 			level.destroy();
 		fx.clear();
@@ -66,7 +66,7 @@ class Game extends Process {
 			e.destroy();
 		garbageCollectEntities();
 
-		level = new Level(l);
+		level = new Level(l, levelIdx);
 		// <---- Here: instanciate your level entities
 		var heroData = l.l_Entities.all_Hero[0];
 		hero = new Hero(heroData.cx, heroData.cy);
@@ -91,6 +91,11 @@ class Game extends Process {
 		Process.resizeAll();
 	}
 
+	public function startNextLevel() {
+		var idx = level.levelIdx + 1;
+		startLevel(worldData.levels[idx], idx);
+	}
+
 	/** CDB file changed on disk **/
 	public function onCdbReload() {}
 
@@ -98,7 +103,7 @@ class Game extends Process {
 	public function onLdtkReload() {
 		worldData.parseJson(hxd.Res.world.world.entry.getText());
 		if (level != null)
-			startLevel(worldData.getLevel(level.data.uid));
+			startLevel(worldData.getLevel(level.data.uid), level.levelIdx);
 	}
 
 	/** Window/app resize event **/

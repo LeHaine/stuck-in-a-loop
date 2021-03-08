@@ -13,7 +13,8 @@ class Exit extends Entity {
 
 		if (hero.atEntity(this)) {
 			if (isLevelComplete()) {
-				trace("level complete!");
+				game.startNextLevel();
+				destroy();
 			} else {
 				hero.setPosCase(level.startPoint.cx, level.startPoint.cy);
 			}
