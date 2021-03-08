@@ -14,5 +14,6 @@ class BlockLockedInState extends State<Block> {
 		super.begin();
 		context.active = false;
 		context.setExtraCollision(true);
+		context.completed = true;
 	}
 }

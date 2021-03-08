@@ -12,7 +12,20 @@ class Exit extends Entity {
 		super.update();
 
 		if (hero.atEntity(this)) {
-			hero.setPosCase(level.startPoint.cx, level.startPoint.cy);
+			if (isLevelComplete()) {
+				trace("level complete!");
+			} else {
+				hero.setPosCase(level.startPoint.cx, level.startPoint.cy);
+			}
 		}
+	}
+
+	public function isLevelComplete() {
+		for (actionable in Actionable.ALL) {
+			if (!actionable.completed && !actionable.optionial) {
+				return false;
+			}
+		}
+		return true;
 	}
 }

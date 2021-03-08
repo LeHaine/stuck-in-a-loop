@@ -17,7 +17,7 @@ class Lever extends Actionable {
 	private var machine: StateMachine<Lever>;
 
 	public function new(x, y, actionId) {
-		super(x, y, false, actionId, -1);
+		super(x, y, true, actionId, -1);
 		hasCollision = false;
 		machine = new StateMachine<Lever>(this);
 		machine.addState(new LeverLockedState());
