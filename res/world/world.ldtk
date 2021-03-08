@@ -811,6 +811,36 @@
 								{ "__identifier": "sticks", "__value": true, "__type": "Bool", "defUid": 39, "realEditorValues": [] },
 								{ "__identifier": "optional", "__value": false, "__type": "Bool", "defUid": 43, "realEditorValues": [] }
 							]
+						},
+						{
+							"__identifier": "FloorButton",
+							"__grid": [16,11],
+							"__pivot": [0.5,1],
+							"__tile": null,
+							"width": 16,
+							"height": 16,
+							"defUid": 37,
+							"px": [264,192],
+							"fieldInstances": [
+								{
+									"__identifier": "action_id",
+									"__value": 2,
+									"__type": "Int",
+									"defUid": 38,
+									"realEditorValues": [{ "id": "V_Int", "params": [2] }]
+								},
+								{
+									"__identifier": "sticks",
+									"__value": false,
+									"__type": "Bool",
+									"defUid": 39,
+									"realEditorValues": [{
+										"id": "V_Bool",
+										"params": [ false ]
+									}]
+								},
+								{ "__identifier": "optional", "__value": false, "__type": "Bool", "defUid": 43, "realEditorValues": [] }
+							]
 						}
 					]
 				},

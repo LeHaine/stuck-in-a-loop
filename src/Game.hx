@@ -1,3 +1,4 @@
+import en.floorbutton.FloorButton;
 import en.gate.Gate;
 import en.block.Block;
 import en.lever.Lever;
@@ -85,6 +86,10 @@ class Game extends Process {
 
 		for (gate in l.l_Entities.all_Gate) {
 			new Gate(gate.cx, gate.cy, gate.f_opened, gate.f_alignment, gate.f_optional, gate.f_reaction_id);
+		}
+
+		for (floorButton in l.l_Entities.all_FloorButton) {
+			new FloorButton(floorButton.cx, floorButton.cy, floorButton.f_sticks, floorButton.f_optional, floorButton.f_action_id);
 		}
 		camera.recenter();
 		hud.onLevelStart();

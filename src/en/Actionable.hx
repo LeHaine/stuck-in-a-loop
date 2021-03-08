@@ -9,7 +9,7 @@ class Actionable extends Interactable {
 	public var actionId = -1;
 	public var reactionId = -1;
 
-	public function new(x, y, optional, actionId, reactionId) {
+	public function new(x, y, optional = false, actionId = -1, reactionId = -1) {
 		super(x, y);
 		this.optionial = optional;
 		this.actionId = actionId;
