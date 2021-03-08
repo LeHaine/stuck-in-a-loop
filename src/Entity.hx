@@ -296,7 +296,6 @@ class Entity {
 	}
 
 	public function setExtraCollision(enabled: Bool) {
-		trace('set extra coll: $enabled at $cx,$cy');
 		level.setExtraCollision(cx, cy, enabled);
 	}
 

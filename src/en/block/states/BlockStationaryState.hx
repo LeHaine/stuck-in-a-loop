@@ -13,12 +13,10 @@ class BlockStationaryState extends State<Block> {
 	override function begin() {
 		super.begin();
 		context.setExtraCollision(true);
-		trace("stationary: begin");
 	}
 
 	override function end() {
 		super.end();
-		trace("stationary: end");
 		context.setExtraCollision(false);
 	}
 }
