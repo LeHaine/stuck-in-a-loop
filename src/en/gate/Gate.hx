@@ -24,6 +24,7 @@ class Gate extends Actionable {
 			#end
 		}
 
+		active = false;
 		addGraphcisSquare(Color.pickUniqueColorFor("gate"));
 	}
 

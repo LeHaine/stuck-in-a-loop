@@ -55,7 +55,7 @@ class Hero extends Entity {
 
 	public function checkForInteractable() {
 		var dh = new DecisionHelper(Interactable.ALL);
-		dh.remove((e) -> return distCase(e) > e.focusRange);
+		dh.remove((e) -> return distCase(e) > e.focusRange || !e.active);
 		dh.score((e) -> return -distCase(e));
 
 		var best = dh.getBest();

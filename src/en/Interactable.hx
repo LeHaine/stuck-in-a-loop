@@ -71,9 +71,6 @@ class Interactable extends Entity {
 	}
 
 	public function unfocus() {
-		if (!active) {
-			return;
-		}
 		if (onUnfocus != null) {
 			onUnfocus();
 		}
