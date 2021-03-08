@@ -17,7 +17,8 @@ class Block extends Actionable {
 	public function new(cx, cy, optional, actionId, reactionId, goal: LPoint) {
 		super(cx, cy, optional, actionId, reactionId);
 		this.goal = goal;
-
+		pivotY = 0.5;
+		yr = 0.5;
 		machine = new StateMachine<Block>(this);
 		machine.addState(new BlockLockedInState());
 		machine.addState(new BlockMovingState());
