@@ -729,7 +729,7 @@ class Entity {
 		while (steps > 0) {
 			yr += step;
 
-			// [ add Y collisions checks here ]if (hasCollision) {
+			// [ add Y collisions checks here ]
 			if (hasCollision) {
 				if (level.hasCollision(cx, cy + 1) && yr > 0.9) {
 					yr = 0.9;
