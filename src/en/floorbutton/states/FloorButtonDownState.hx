@@ -5,6 +5,7 @@ class FloorButtonDownState extends FloorButtonState {
 	private var totalClicks = 0;
 	private var shouldPopUpNext = false;
 	private var waitingForToggle = false;
+	private var lastEntity: Entity;
 
 	public function new() {
 		super();
@@ -17,6 +18,8 @@ class FloorButtonDownState extends FloorButtonState {
 	override function begin() {
 		super.begin();
 		waitingForToggle = context.sticks;
+		lastEntity = context.entityOnMe;
+		context.interact(lastEntity);
 	}
 
 	override function update(tmod: Float) {
@@ -29,5 +32,11 @@ class FloorButtonDownState extends FloorButtonState {
 				waitingForToggle = false;
 			}
 		}
+	}
+
+	override function end() {
+		super.end();
+		context.interact(lastEntity);
+		lastEntity = null;
 	}
 }
