@@ -371,7 +371,7 @@
 			"limitScope": "PerLevel",
 			"limitBehavior": "MoveLastOne",
 			"pivotX": 0.5,
-			"pivotY": 1,
+			"pivotY": 0.5,
 			"fieldDefs": [
 				{
 					"identifier": "Goal",
@@ -606,35 +606,6 @@
 							}]
 						},
 						{
-							"__identifier": "Block",
-							"__grid": [14,16],
-							"__pivot": [0.5,1],
-							"__tile": null,
-							"width": 16,
-							"height": 16,
-							"defUid": 26,
-							"px": [232,272],
-							"fieldInstances": [
-								{
-									"__identifier": "Goal",
-									"__value": [{ "cx": 22, "cy": 16 }],
-									"__type": "Array<Point>",
-									"defUid": 28,
-									"realEditorValues": [{
-										"id": "V_String",
-										"params": ["22,16"]
-									}]
-								},
-								{
-									"__identifier": "optional",
-									"__value": false,
-									"__type": "Bool",
-									"defUid": 29,
-									"realEditorValues": [null]
-								}
-							]
-						},
-						{
 							"__identifier": "Gate",
 							"__grid": [21,16],
 							"__pivot": [0.5,1],
@@ -662,6 +633,29 @@
 									"defUid": 36,
 									"realEditorValues": [{ "id": "V_Int", "params": [1] }]
 								}
+							]
+						},
+						{
+							"__identifier": "Block",
+							"__grid": [14,16],
+							"__pivot": [0.5,0.5],
+							"__tile": null,
+							"width": 16,
+							"height": 16,
+							"defUid": 26,
+							"px": [232,264],
+							"fieldInstances": [
+								{
+									"__identifier": "Goal",
+									"__value": [{ "cx": 22, "cy": 16 }],
+									"__type": "Array<Point>",
+									"defUid": 28,
+									"realEditorValues": [{
+										"id": "V_String",
+										"params": ["22,16"]
+									}]
+								},
+								{ "__identifier": "optional", "__value": false, "__type": "Bool", "defUid": 29, "realEditorValues": [] }
 							]
 						}
 					]

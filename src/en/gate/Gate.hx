@@ -36,5 +36,6 @@ class Gate extends Actionable {
 	override function react() {
 		super.react();
 		opened = !opened;
+		completed = true;
 	}
 }

@@ -46,7 +46,11 @@ class Block extends Actionable {
 
 	public function push(from: Entity) {
 		pushX = -caseDirToX(from);
-		pushY = -caseDirToY(from);
+		if (pushX == 0) {
+			pushY = -caseDirToY(from);
+		} else {
+			pushY = 0;
+		}
 	}
 
 	private inline function caseDirToX(to: Entity) return if (to.cx < cx) -1 else if (to.cx > cx) 1 else 0;

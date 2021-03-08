@@ -44,5 +44,6 @@ class Lever extends Actionable {
 		} else {
 			direction = Right;
 		}
+		completed = true;
 	}
 }
