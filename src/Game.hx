@@ -177,15 +177,19 @@ class Game extends Process {
 		baseTimeMul = (0.2 + 0.8 * curGameSpeed) * (ucd.has("stopFrame") ? 0.3 : 1);
 		Assets.tiles.tmod = tmod;
 
+		Entity.ALL.sort((a, b) -> Reflect.compare(a.bottom + a.sprOffY + a.zPriorityOffset, b.bottom + b.sprOffY + b.zPriorityOffset)); // y-sort
 		// Entities post-updates
 		for (e in Entity.ALL)
-			if (!e.destroyed)
+			if (!e.destroyed) {
+				scroller.over(e.spr);
 				e.postUpdate();
+			}
 
 		// Entities final updates
 		for (e in Entity.ALL)
-			if (!e.destroyed)
+			if (!e.destroyed) {
 				e.finalUpdate();
+			}
 		garbageCollectEntities();
 	}
 

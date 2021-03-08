@@ -68,11 +68,15 @@ class Entity {
 	/** Sub-grid Y coordinate (from 0.0 to 1.0) **/
 	public var yr = 1.0;
 
+	public var zr = 0.;
+
 	/** X velocity, in grid fractions **/
 	public var dx = 0.;
 
 	/** Y velocity, in grid fractions **/
 	public var dy = 0.;
+
+	public var dz = 0.;
 
 	// Uncontrollable bump velocities, usually applied by external
 	// factors (think of a bumper in Sonic for example)
@@ -99,6 +103,10 @@ class Entity {
 
 	/** Multiplier applied on each frame to bump Y velocity **/
 	public var bumpFrictY = 0.93;
+
+	public var gravity = 0.02;
+
+	public var zPriorityOffset = 0.;
 
 	/** Pixel width of entity **/
 	public var wid(default, set): Float = Const.GRID;
@@ -140,6 +148,9 @@ class Entity {
 
 	/** Sprite Y squash & stretch scaling, which automatically comes back to 1 after a few frames **/
 	var sprSquashY = 1.0;
+
+	public var sprOffX = 0.;
+	public var sprOffY = 0.;
 
 	/** Entity visibility **/
 	public var entityVisible = true;
@@ -324,6 +335,15 @@ class Entity {
 	public function cancelVelocities() {
 		dx = bdx = 0;
 		dy = bdy = 0;
+	}
+
+	public inline function setSpriteOffset(?ox: Float, ?oy: Float) {
+		if (ox == null)
+			sprOffY = sprOffX = 0;
+		else {
+			sprOffX = ox;
+			sprOffY = oy;
+		}
 	}
 
 	public function is<T: Entity>(c: Class<T>) return Std.isOfType(this, c);
@@ -746,6 +766,22 @@ class Entity {
 			dy = 0;
 		if (M.fabs(bdy) <= 0.0005 * tmod)
 			bdy = 0;
+
+		// Z
+		zr += dz * tmod;
+		if (zr > 0)
+			dz -= gravity * tmod;
+		if (zr < 0) {
+			zr = 0;
+			dz = -dz * 0.9;
+			if (M.fabs(dz) <= 0.06)
+				dz = 0;
+			onLand();
+		}
+		dz *= Math.pow(0.9, tmod);
+		if (M.fabs(dz) <= 0.0010 * tmod)
+			dz = 0;
+
 		#if debug
 		if (ui.Console.ME.hasFlag("affect")) {
 			var all = [];
@@ -759,4 +795,6 @@ class Entity {
 			disableDebugBounds();
 		#end
 	}
+
+	function onLand() {}
 }
