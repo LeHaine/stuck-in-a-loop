@@ -692,6 +692,7 @@ class Entity {
 					if (yr > 0.6 && !level.hasCollision(cx + 1, cy + 1) && dyTotal >= -wallSlideTolerance) {
 						dy += wallSlide * tmod;
 					}
+					onTouchWall(1, 0);
 				}
 				if (level.hasCollision(cx - 1, cy) && xr < 0.2) {
 					xr = 0.2;
@@ -701,6 +702,7 @@ class Entity {
 					if (yr > 0.6 && !level.hasCollision(cx - 1, cy + 1) && dyTotal >= -wallSlideTolerance) {
 						dy += wallSlide * tmod;
 					}
+					onTouchWall(-1, 0);
 				}
 			}
 
@@ -737,6 +739,7 @@ class Entity {
 					if (xr > 0.5 && !level.hasCollision(cx + 1, cy + 1) && dxTotal >= -wallSlideTolerance) {
 						dx += wallSlide * tmod;
 					}
+					onTouchWall(0, 1);
 				}
 				if (level.hasCollision(cx, cy - 1) && yr < 0.5) {
 					yr = 0.5;
@@ -746,6 +749,7 @@ class Entity {
 					if (xr > 0.5 && !level.hasCollision(cx + 1, cy - 1) && dxTotal >= -wallSlideTolerance) {
 						dx += wallSlide * tmod;
 					}
+					onTouchWall(0, -1);
 				}
 			}
 
@@ -795,6 +799,8 @@ class Entity {
 			disableDebugBounds();
 		#end
 	}
+
+	function onTouchWall(wallDirX: Int, wallDirY: Int) {}
 
 	function onLand() {}
 }
