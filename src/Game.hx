@@ -76,7 +76,7 @@ class Game extends Process {
 			new Exit(exit.cx, exit.cy);
 		}
 		for (lever in l.l_Entities.all_Lever) {
-			new Lever(lever.cx, lever.cy, lever.f_action_id);
+			new Lever(lever.cx, lever.cy, lever.f_optional, lever.f_action_id);
 		}
 
 		for (block in l.l_Entities.all_Block) {
@@ -84,7 +84,7 @@ class Game extends Process {
 		}
 
 		for (gate in l.l_Entities.all_Gate) {
-			new Gate(gate.cx, gate.cy, gate.f_opened, gate.f_alignment, gate.f_reaction_id);
+			new Gate(gate.cx, gate.cy, gate.f_opened, gate.f_alignment, gate.f_optional, gate.f_reaction_id);
 		}
 		camera.recenter();
 		hud.onLevelStart();

@@ -9,7 +9,7 @@
 		"url": "https://ldtk.io"
 	},
 	"jsonVersion": "0.8.1",
-	"nextUid": 37,
+	"nextUid": 44,
 	"worldLayout": "LinearHorizontal",
 	"worldGridWidth": 256,
 	"worldGridHeight": 256,
@@ -346,6 +346,26 @@
 					"acceptFileTypes": null,
 					"defaultOverride": { "id": "V_Int", "params": [-1] },
 					"textLangageMode": null
+				},
+				{
+					"identifier": "optional",
+					"__type": "Bool",
+					"uid": 41,
+					"type": "F_Bool",
+					"isArray": false,
+					"canBeNull": false,
+					"arrayMinLength": null,
+					"arrayMaxLength": null,
+					"editorDisplayMode": "Hidden",
+					"editorDisplayPos": "Above",
+					"editorAlwaysShow": false,
+					"editorCutLongValues": true,
+					"min": null,
+					"max": null,
+					"regex": null,
+					"acceptFileTypes": null,
+					"defaultOverride": null,
+					"textLangageMode": null
 				}
 			]
 		},
@@ -498,6 +518,115 @@
 					"acceptFileTypes": null,
 					"defaultOverride": { "id": "V_Int", "params": [-1] },
 					"textLangageMode": null
+				},
+				{
+					"identifier": "optional",
+					"__type": "Bool",
+					"uid": 42,
+					"type": "F_Bool",
+					"isArray": false,
+					"canBeNull": false,
+					"arrayMinLength": null,
+					"arrayMaxLength": null,
+					"editorDisplayMode": "Hidden",
+					"editorDisplayPos": "Above",
+					"editorAlwaysShow": false,
+					"editorCutLongValues": true,
+					"min": null,
+					"max": null,
+					"regex": null,
+					"acceptFileTypes": null,
+					"defaultOverride": null,
+					"textLangageMode": null
+				}
+			]
+		},
+		{
+			"identifier": "FloorButton",
+			"uid": 37,
+			"tags": [],
+			"width": 16,
+			"height": 16,
+			"resizableX": false,
+			"resizableY": false,
+			"keepAspectRatio": false,
+			"fillOpacity": 1,
+			"lineOpacity": 1,
+			"hollow": false,
+			"color": "#953B3B",
+			"renderMode": "Rectangle",
+			"showName": true,
+			"tilesetId": null,
+			"tileId": null,
+			"tileRenderMode": "FitInside",
+			"maxCount": 0,
+			"limitScope": "PerLevel",
+			"limitBehavior": "MoveLastOne",
+			"pivotX": 0.5,
+			"pivotY": 1,
+			"fieldDefs": [
+				{
+					"identifier": "action_id",
+					"__type": "Int",
+					"uid": 38,
+					"type": "F_Int",
+					"isArray": false,
+					"canBeNull": false,
+					"arrayMinLength": null,
+					"arrayMaxLength": null,
+					"editorDisplayMode": "NameAndValue",
+					"editorDisplayPos": "Above",
+					"editorAlwaysShow": true,
+					"editorCutLongValues": true,
+					"min": null,
+					"max": null,
+					"regex": null,
+					"acceptFileTypes": null,
+					"defaultOverride": { "id": "V_Int", "params": [-1] },
+					"textLangageMode": null
+				},
+				{
+					"identifier": "sticks",
+					"__type": "Bool",
+					"uid": 39,
+					"type": "F_Bool",
+					"isArray": false,
+					"canBeNull": false,
+					"arrayMinLength": null,
+					"arrayMaxLength": null,
+					"editorDisplayMode": "Hidden",
+					"editorDisplayPos": "Above",
+					"editorAlwaysShow": false,
+					"editorCutLongValues": true,
+					"min": null,
+					"max": null,
+					"regex": null,
+					"acceptFileTypes": null,
+					"defaultOverride": {
+						"id": "V_Bool",
+						"params": [ true ]
+					},
+					"textLangageMode": null
+				},
+				{
+					"identifier": "optional",
+					"__type": "Bool",
+					"uid": 43,
+					"type": "F_Bool",
+					"isArray": false,
+					"canBeNull": false,
+					"arrayMinLength": null,
+					"arrayMaxLength": null,
+					"editorDisplayMode": "Hidden",
+					"editorDisplayPos": "Above",
+					"editorAlwaysShow": false,
+					"editorCutLongValues": true,
+					"min": null,
+					"max": null,
+					"regex": null,
+					"acceptFileTypes": null,
+					"defaultOverride": null,
+					"textLangageMode": null
 				}
 			]
 		}
@@ -597,13 +726,16 @@
 							"height": 16,
 							"defUid": 24,
 							"px": [168,96],
-							"fieldInstances": [{
-								"__identifier": "action_id",
-								"__value": 1,
-								"__type": "Int",
-								"defUid": 34,
-								"realEditorValues": [{ "id": "V_Int", "params": [1] }]
-							}]
+							"fieldInstances": [
+								{
+									"__identifier": "action_id",
+									"__value": 1,
+									"__type": "Int",
+									"defUid": 34,
+									"realEditorValues": [{ "id": "V_Int", "params": [1] }]
+								},
+								{ "__identifier": "optional", "__value": false, "__type": "Bool", "defUid": 41, "realEditorValues": [] }
+							]
 						},
 						{
 							"__identifier": "Gate",
@@ -632,7 +764,8 @@
 									"__type": "Int",
 									"defUid": 36,
 									"realEditorValues": [{ "id": "V_Int", "params": [1] }]
-								}
+								},
+								{ "__identifier": "optional", "__value": false, "__type": "Bool", "defUid": 42, "realEditorValues": [] }
 							]
 						},
 						{
@@ -656,6 +789,27 @@
 									}]
 								},
 								{ "__identifier": "optional", "__value": false, "__type": "Bool", "defUid": 29, "realEditorValues": [] }
+							]
+						},
+						{
+							"__identifier": "FloorButton",
+							"__grid": [10,13],
+							"__pivot": [0.5,1],
+							"__tile": null,
+							"width": 16,
+							"height": 16,
+							"defUid": 37,
+							"px": [168,224],
+							"fieldInstances": [
+								{
+									"__identifier": "action_id",
+									"__value": 1,
+									"__type": "Int",
+									"defUid": 38,
+									"realEditorValues": [{ "id": "V_Int", "params": [1] }]
+								},
+								{ "__identifier": "sticks", "__value": true, "__type": "Bool", "defUid": 39, "realEditorValues": [] },
+								{ "__identifier": "optional", "__value": false, "__type": "Bool", "defUid": 43, "realEditorValues": [] }
 							]
 						}
 					]

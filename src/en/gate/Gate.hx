@@ -10,8 +10,8 @@ class Gate extends Actionable {
 
 	private var machine: StateMachine<Gate>;
 
-	public function new(cx, cy, opened, alignment, reactionId) {
-		super(cx, cy, true, -1, reactionId);
+	public function new(cx, cy, opened, alignment, optional, reactionId) {
+		super(cx, cy, optional, -1, reactionId);
 		this.opened = opened;
 		this.alignment = alignment;
 		machine = new StateMachine<Gate>(this);
