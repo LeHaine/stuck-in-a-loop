@@ -30,6 +30,8 @@ class Level extends dn.Process {
 
 	public var data: World.World_Level;
 
+	public var startPoint: LPoint;
+
 	var tilesetSource: h2d.Tile;
 
 	var marks: Map<LevelMark, Map<Int, Bool>> = new Map();

@@ -1,3 +1,6 @@
+import en.hero.Hero;
+import h2d.Graphics;
+
 class Entity {
 
 	public static var ALL: Array<Entity> = [];
@@ -36,6 +39,10 @@ class Entity {
 	public var hud(get, never): ui.Hud;
 
 	inline function get_hud() return Game.ME.hud;
+
+	public var hero(get, never): Hero;
+
+	inline function get_hero() return Game.ME.hero;
 
 	/** Cooldowns **/
 	public var cd: dn.Cooldown;
@@ -355,6 +362,14 @@ class Entity {
 		return dn.Bresenham.checkThinLine(cx, cy, e.cx, e.cy, canSeeThrough);
 	}
 
+	public inline function atEntity(entity: Entity) {
+		return at(entity.cx, entity.cy);
+	}
+
+	public inline function at(tcx: Int, tcy: Int) {
+		return cx == tcx && cy == tcy;
+	}
+
 	public inline function createPoint() return LPoint.fromCase(cx + xr, cy + yr);
 
 	public final function destroy() {
@@ -443,6 +458,12 @@ class Entity {
 		// Center
 		debugBounds.lineStyle(1, c, 0.3);
 		debugBounds.drawCircle(centerX - attachX, centerY - attachY, 3);
+	}
+
+	private function addGraphcisSquare(color: Int) {
+		var graphics = new Graphics(spr);
+		graphics.beginFill(color);
+		graphics.drawRect(-wid * pivotX, -hei * pivotY, wid, hei);
 	}
 
 	/** Wait for `sec` seconds, then runs provided callback. **/

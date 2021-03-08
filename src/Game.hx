@@ -67,6 +67,11 @@ class Game extends Process {
 		// <---- Here: instanciate your level entities
 		var heroData = l.l_Entities.all_Hero[0];
 		hero = new Hero(heroData.cx, heroData.cy);
+		level.startPoint = LPoint.fromCase(heroData.cx, heroData.cy);
+
+		for (exit in l.l_Entities.all_Exit) {
+			new Exit(exit.cx, exit.cy);
+		}
 
 		camera.recenter();
 		hud.onLevelStart();

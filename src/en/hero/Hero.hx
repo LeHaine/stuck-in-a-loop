@@ -32,10 +32,8 @@ class Hero extends Entity {
 			var state = stateName.split(".").pop();
 			debug(state);
 		}
-		var graphics = new Graphics(spr);
-		graphics.beginFill(Color.pickUniqueColorFor("hero"));
-		graphics.drawRect(-wid * 0.5, -hei * 0.5, wid, hei);
 		camera.trackEntity(this, true);
+		addGraphcisSquare(Color.pickUniqueColorFor("hero"));
 	}
 
 	override function update() {
