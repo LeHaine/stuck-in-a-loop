@@ -9,7 +9,7 @@
 		"url": "https://ldtk.io"
 	},
 	"jsonVersion": "0.8.1",
-	"nextUid": 25,
+	"nextUid": 26,
 	"worldLayout": "LinearHorizontal",
 	"worldGridWidth": 256,
 	"worldGridHeight": 256,
@@ -304,7 +304,7 @@
 			"fieldDefs": []
 		},
 		{
-			"identifier": "Trigger",
+			"identifier": "Lever",
 			"uid": 24,
 			"tags": [],
 			"width": 16,
@@ -408,7 +408,7 @@
 							"fieldInstances": []
 						},
 						{
-							"__identifier": "Trigger",
+							"__identifier": "Lever",
 							"__grid": [14,11],
 							"__pivot": [0.5,1],
 							"__tile": null,

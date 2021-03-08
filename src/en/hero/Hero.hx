@@ -69,4 +69,8 @@ class Hero extends Entity {
 			}
 		}
 	}
+
+	public function interact() {
+		interactableFocus.interact(this);
+	}
 }

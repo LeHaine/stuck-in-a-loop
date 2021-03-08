@@ -9,4 +9,9 @@ class HeroInteractState extends HeroState {
 	override function reason(): Bool {
 		return context.canPerformInteraction;
 	}
+
+	override function begin() {
+		super.begin();
+		context.interact();
+	}
 }

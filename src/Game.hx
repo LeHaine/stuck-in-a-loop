@@ -1,3 +1,4 @@
+import en.lever.Lever;
 import en.hero.Hero;
 import dn.Process;
 import hxd.Key;
@@ -72,7 +73,9 @@ class Game extends Process {
 		for (exit in l.l_Entities.all_Exit) {
 			new Exit(exit.cx, exit.cy);
 		}
-
+		for (lever in l.l_Entities.all_Lever) {
+			new Lever(lever.cx, lever.cy);
+		}
 		camera.recenter();
 		hud.onLevelStart();
 		Process.resizeAll();
