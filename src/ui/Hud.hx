@@ -14,6 +14,8 @@ class Hud extends dn.Process {
 
 	inline function get_level() return Game.ME.level;
 
+	public var interactionLabel: h2d.Text;
+
 	var flow: h2d.Flow;
 	var invalidated = true;
 	var notifications: Array<h2d.Flow> = [];
@@ -28,6 +30,10 @@ class Hud extends dn.Process {
 
 		flow = new h2d.Flow(root);
 		notifications = [];
+
+		interactionLabel = new h2d.Text(Assets.fontPixel, flow);
+		interactionLabel.alpha = 0;
+		interactionLabel.visible = false;
 
 		debugText = new h2d.Text(Assets.fontSmall, root);
 		clearDebug();

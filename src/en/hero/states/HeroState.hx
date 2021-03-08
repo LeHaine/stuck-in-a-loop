@@ -1,5 +1,7 @@
 package en.hero.states;
 
+import dn.DecisionHelper;
+
 class HeroState extends State<Hero> {
 
 	public function new() {
@@ -20,5 +22,10 @@ class HeroState extends State<Hero> {
 			context.dx *= Math.pow(0.6, tmod);
 			context.dy *= Math.pow(0.6, tmod);
 		}
+	}
+
+	override function update(tmod: Float) {
+		super.update(tmod);
+		context.checkForInteractable();
 	}
 }

@@ -370,6 +370,8 @@ class Entity {
 		return cx == tcx && cy == tcy;
 	}
 
+	public inline function within(x, y, width = 1, height = 1) return x >= cx - width && x <= cx + width && y >= cy - height && y <= cy + height;
+
 	public inline function createPoint() return LPoint.fromCase(cx + xr, cy + yr);
 
 	public final function destroy() {
