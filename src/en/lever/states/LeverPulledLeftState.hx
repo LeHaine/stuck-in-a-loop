@@ -13,5 +13,6 @@ class LeverPulledLeftState extends State<Lever> {
 	override function begin() {
 		super.begin();
 		context.labelText = Lang.t._("Pull right");
+		context.spr.set("leverLeft");
 	}
 }

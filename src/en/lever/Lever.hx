@@ -28,7 +28,6 @@ class Lever extends Actionable {
 			debugFSM(stateName);
 			#end
 		}
-		addGraphcisSquare(Color.pickUniqueColorFor("lever"));
 	}
 
 	override function update() {

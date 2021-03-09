@@ -13,6 +13,7 @@ class LeverLockedState extends State<Lever> {
 	override function begin() {
 		super.begin();
 		context.active = false;
+		context.spr.set("leverUp");
 	}
 
 	override function end() {
