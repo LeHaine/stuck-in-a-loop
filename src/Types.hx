@@ -3,10 +3,8 @@ enum Affect {
 }
 
 enum Alignment {
-	Left;
-	Top;
-	Bottom;
-	Right;
+	Vertical;
+	Horizontal;
 }
 
 enum LevelMark {}

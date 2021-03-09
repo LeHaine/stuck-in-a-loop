@@ -13,5 +13,6 @@ class GateOpenedState extends State<Gate> {
 	override function begin() {
 		super.begin();
 		context.setExtraCollision(false);
+		context.determineSprite();
 	}
 }

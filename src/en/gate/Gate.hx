@@ -24,8 +24,27 @@ class Gate extends Actionable {
 			#end
 		}
 
+		determineSprite();
 		active = false;
-		addGraphcisSquare(Color.pickUniqueColorFor("gate"));
+		//	addGraphcisSquare(Color.pickUniqueColorFor("gate"));
+	}
+
+	public function determineSprite() {
+		zPriorityOffset = 0;
+		if (alignment == Horizontal) {
+			if (opened) {
+				spr.set("gateOpened_h");
+			} else {
+				spr.set("gateClosed_h");
+			}
+		} else {
+			if (opened) {
+				spr.set("gateOpened_v");
+				zPriorityOffset = -99;
+			} else {
+				spr.set("gateClosed_v");
+			}
+		}
 	}
 
 	override function update() {
