@@ -9,4 +9,9 @@ class FloorButtonUpState extends FloorButtonState {
 	override function reason(): Bool {
 		return context.entityOnMe == null;
 	}
+
+	override function begin() {
+		super.begin();
+		context.spr.set("floorbuttonUp");
+	}
 }

@@ -22,7 +22,6 @@ class FloorButton extends Actionable {
 			debugFSM(stateName);
 			#end
 		}
-		addGraphcisSquare(Color.pickUniqueColorFor("floorbutton"));
 		zPriorityOffset = -99;
 	}
 

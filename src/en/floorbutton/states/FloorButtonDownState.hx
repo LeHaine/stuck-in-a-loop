@@ -20,6 +20,7 @@ class FloorButtonDownState extends FloorButtonState {
 		waitingForToggle = context.sticks;
 		lastEntity = context.entityOnMe;
 		context.interact(lastEntity);
+		context.spr.set("floorbuttonDown");
 	}
 
 	override function update(tmod: Float) {
