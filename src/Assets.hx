@@ -28,5 +28,7 @@ class Assets {
 		fontMedium = hxd.Res.fonts.barlow_condensed_medium_regular_17.toFont();
 		fontLarge = hxd.Res.fonts.barlow_condensed_medium_regular_32.toFont();
 		tiles = dn.heaps.assets.Atlas.load("atlas/tiles.atlas");
+
+		tiles.defineAnim("heroIdle", "0-1(30)");
 	}
 }

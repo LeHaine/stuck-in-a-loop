@@ -50,7 +50,6 @@ class Hero extends Entity {
 			#end
 		}
 		camera.trackEntity(this, true);
-		addGraphcisSquare(Color.pickUniqueColorFor("hero"));
 	}
 
 	override function update() {
