@@ -23,14 +23,12 @@ class Gate extends Actionable {
 			debug(state);
 			#end
 		}
-
-		determineSprite();
 		active = false;
-		//	addGraphcisSquare(Color.pickUniqueColorFor("gate"));
 	}
 
 	public function determineSprite() {
 		zPriorityOffset = 0;
+		setSpriteOffset();
 		if (alignment == Horizontal) {
 			if (opened) {
 				spr.set("gateOpened_h");
@@ -40,6 +38,7 @@ class Gate extends Actionable {
 		} else {
 			if (opened) {
 				spr.set("gateOpened_v");
+				sprOffX = 4;
 				zPriorityOffset = -99;
 			} else {
 				spr.set("gateClosed_v");

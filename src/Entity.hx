@@ -628,8 +628,8 @@ class Entity {
 
 	/** Post-update loop, usually used for anything "render" related **/
 	public function postUpdate() {
-		spr.x = (cx + xr) * Const.GRID;
-		spr.y = (cy + yr) * Const.GRID;
+		spr.x = (cx + xr) * Const.GRID + sprOffX;
+		spr.y = (cy + yr) * Const.GRID + sprOffY;
 		spr.scaleX = dir * sprScaleX * sprSquashX;
 		spr.scaleY = sprScaleY * sprSquashY;
 		spr.visible = entityVisible;

@@ -4,30 +4,37 @@ size: 64,128
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-empty
-  rotate: false
-  xy: 58, 67
-  size: 3, 3
-  orig: 3, 3
-  offset: 0, 0
-  index: -1
-fxCircle0
+block0
   rotate: false
   xy: 46, 1
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
+empty
+  rotate: false
+  xy: 8, 73
+  size: 3, 3
+  orig: 3, 3
+  offset: 0, 0
+  index: -1
+fxCircle0
+  rotate: false
+  xy: 46, 18
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
 fxDot0
   rotate: false
-  xy: 58, 71
+  xy: 12, 73
   size: 3, 3
   orig: 3, 3
   offset: 0, 0
   index: -1
 fxImpact0
   rotate: false
-  xy: 46, 50
+  xy: 46, 67
   size: 15, 9
   orig: 15, 9
   offset: 0, 0
@@ -48,7 +55,7 @@ fxLineDir0
   index: -1
 fxSmallCircle0
   rotate: false
-  xy: 55, 60
+  xy: 10, 66
   size: 6, 6
   orig: 6, 6
   offset: 0, 0
@@ -69,21 +76,21 @@ fxTail0
   index: -1
 gateClosed_h0
   rotate: false
-  xy: 46, 35
+  xy: 46, 52
   size: 16, 14
   orig: 16, 14
   offset: 0, 0
   index: -1
 gateClosed_v0
   rotate: false
-  xy: 53, 67
+  xy: 17, 66
   size: 4, 22
   orig: 4, 22
   offset: 0, 0
   index: -1
 gateOpened_h0
   rotate: false
-  xy: 46, 18
+  xy: 46, 35
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
@@ -97,21 +104,21 @@ gateOpened_v0
   index: -1
 pixel
   rotate: false
-  xy: 62, 50
+  xy: 62, 67
   size: 1, 1
   orig: 1, 1
   offset: 0, 0
   index: -1
 uiBar
   rotate: false
-  xy: 46, 66
+  xy: 1, 72
   size: 6, 3
   orig: 6, 3
   offset: 0, 0
   index: -1
 uiBarBg
   rotate: false
-  xy: 46, 60
+  xy: 1, 66
   size: 8, 5
   orig: 8, 5
   offset: 0, 0

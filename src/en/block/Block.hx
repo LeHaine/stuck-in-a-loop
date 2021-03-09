@@ -26,11 +26,11 @@ class Block extends Actionable {
 		machine.onStateChanged = (stateName) -> {
 			#if debug
 			var state = stateName.split(".").pop();
-			debug(state);
+			//	debug(state);
 			#end
 		}
 		labelText = Lang.t._("Push\nHold Shift for big push");
-		addGraphcisSquare(Color.pickUniqueColorFor("block"));
+		spr.set("block");
 	}
 
 	override function update() {
