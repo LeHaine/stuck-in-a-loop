@@ -735,8 +735,8 @@ class Entity {
 
 			// [ add Y collisions checks here ]
 			if (hasCollision) {
-				if (level.hasCollision(cx, cy + 1) && yr > 0.9) {
-					yr = 0.9;
+				if (level.hasCollision(cx, cy + 1) && yr > 1) {
+					yr = 1;
 					if (xr < 0.5 && !level.hasCollision(cx - 1, cy + 1) && dxTotal <= wallSlideTolerance) {
 						dx -= wallSlide * tmod;
 					}
