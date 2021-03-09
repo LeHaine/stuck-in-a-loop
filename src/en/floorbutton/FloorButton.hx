@@ -19,8 +19,7 @@ class FloorButton extends Actionable {
 		machine.addState(new FloorButtonUpState());
 		machine.onStateChanged = (stateName) -> {
 			#if debug
-			var state = stateName.split(".").pop();
-			debug(state);
+			debugFSM(stateName);
 			#end
 		}
 		addGraphcisSquare(Color.pickUniqueColorFor("floorbutton"));

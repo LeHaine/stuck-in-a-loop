@@ -46,8 +46,7 @@ class Hero extends Entity {
 		machine.addState(new HeroIdleState());
 		machine.onStateChanged = (stateName) -> {
 			#if debug
-			var state = stateName.split(".").pop();
-			debug(state);
+			debugFSM(stateName);
 			#end
 		}
 		camera.trackEntity(this, true);

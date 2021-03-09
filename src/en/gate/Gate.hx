@@ -19,8 +19,7 @@ class Gate extends Actionable {
 		machine.addState(new GateClosedState());
 		machine.onStateChanged = (stateName) -> {
 			#if debug
-			var state = stateName.split(".").pop();
-			debug(state);
+			debugFSM(stateName);
 			#end
 		}
 		active = false;

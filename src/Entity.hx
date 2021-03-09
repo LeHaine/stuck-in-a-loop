@@ -804,6 +804,17 @@ class Entity {
 		#end
 	}
 
+	private function debugFSM(stateName: String) {
+		#if debug
+		var hasFlag = ui.Console.ME.hasFlag("fsm");
+		if (hasFlag) {
+			var state = stateName.split(".").pop();
+			debug(state);
+		}
+		#end
+		return false;
+	}
+
 	function onTouchWall(wallDirX: Int, wallDirY: Int) {}
 
 	function onLand() {}

@@ -25,8 +25,7 @@ class Lever extends Actionable {
 		machine.addState(new LeverPulledRightState());
 		machine.onStateChanged = (stateName) -> {
 			#if debug
-			var state = stateName.split(".").pop();
-			debug(state);
+			debugFSM(stateName);
 			#end
 		}
 		addGraphcisSquare(Color.pickUniqueColorFor("lever"));
