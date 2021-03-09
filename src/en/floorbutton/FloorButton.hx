@@ -22,7 +22,7 @@ class FloorButton extends Actionable {
 			debugFSM(stateName);
 			#end
 		}
-		zPriorityOffset = -99;
+		zPriorityOffset = -13;
 	}
 
 	override function update() {

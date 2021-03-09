@@ -20,21 +20,21 @@ empty
   index: -1
 floorbuttonDown0
   rotate: false
-  xy: 46, 18
-  size: 16, 16
-  orig: 16, 16
+  xy: 1, 66
+  size: 16, 15
+  orig: 16, 15
   offset: 0, 0
   index: -1
 floorbuttonUp0
   rotate: false
-  xy: 46, 35
+  xy: 46, 18
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 fxCircle0
   rotate: false
-  xy: 46, 52
+  xy: 46, 35
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
@@ -104,7 +104,7 @@ gateClosed_v0
   index: -1
 gateOpened_h0
   rotate: false
-  xy: 1, 66
+  xy: 46, 52
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
