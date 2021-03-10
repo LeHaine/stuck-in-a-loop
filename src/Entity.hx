@@ -682,6 +682,7 @@ class Entity {
 			shadow.x = centerX;
 			shadow.y = bottom - 2 + zr * Const.GRID * 0.3;
 			shadow.scaleY = -0.4 - 0.3 * zr;
+			shadow.visible = !(level.hasCollision(cx, cy + 1) && yr >= 0.5);
 		}
 
 		// Debug bounds
