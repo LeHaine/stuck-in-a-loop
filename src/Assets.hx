@@ -30,6 +30,6 @@ class Assets {
 		tiles = dn.heaps.assets.Atlas.load("atlas/tiles.atlas");
 
 		tiles.defineAnim("heroIdle", "0-1(30)");
-		tiles.defineAnim("heroRun", "0-2(9), 1(9)");
+		tiles.defineAnim("heroRun", "0(12), 1(7), 2(12), 1(7)");
 	}
 }
