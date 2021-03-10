@@ -14,6 +14,7 @@ class Gate extends Actionable {
 		super(cx, cy, optional, -1, reactionId);
 		this.opened = opened;
 		this.alignment = alignment;
+		hasCollision = false;
 		machine = new StateMachine<Gate>(this);
 		machine.addState(new GateOpenedState());
 		machine.addState(new GateClosedState());

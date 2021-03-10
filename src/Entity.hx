@@ -386,9 +386,13 @@ class Entity {
 
 	public inline function dirTo(e: Entity) return e.centerX < centerX ? -1 : 1;
 
+	public inline function yDirTo(e: Entity) return e.centerY < centerY ? -1 : 1;
+
 	public inline function dirToAng() return dir == 1 ? 0. : M.PI;
 
 	public inline function getMoveAng() return Math.atan2(dyTotal, dxTotal);
+
+	public inline function distSqr(e: Entity) return M.distSqr(centerX, centerY, e.centerX, e.centerY);
 
 	public inline function distCase(e: Entity) return M.dist(cx + xr, cy + yr, e.cx + e.xr, e.cy + e.yr);
 
@@ -418,7 +422,29 @@ class Entity {
 		return cx == tcx && cy == tcy;
 	}
 
-	public inline function within(x, y, width = 1, height = 1) return x >= cx - width && x <= cx + width && y >= cy - height && y <= cy + height;
+	public function checkAndResolveEntityCollisions() {
+		if (!hasCollision) {
+			return;
+		}
+		for (entity in Entity.ALL) {
+			if (entity != this && entity.hasCollision && entity.isCollidingWith(this)) {
+				entity.resolveCollisionFrom(this);
+			}
+		}
+	}
+
+	public function isCollidingWith(with: Entity) {
+		return distPx(with) <= innerRadius;
+	}
+
+	public function resolveCollisionFrom(from: Entity) {
+		var pow = 0.1;
+		var angle = Math.atan2(from.centerY - centerY, from.centerX - centerX);
+		dx -= Math.cos(angle) * pow * tmod;
+		dy -= Math.sin(angle) * pow * tmod;
+	}
+
+	public inline function within(x, y, width = 1., height = 1.) return x >= cx - width && x <= cx + width && y >= cy - height && y <= cy + height;
 
 	public inline function createPoint() return LPoint.fromCase(cx + xr, cy + yr);
 

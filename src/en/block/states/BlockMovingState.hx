@@ -46,6 +46,7 @@ class BlockMovingState extends State<Block> {
 
 	override function update(tmod: Float) {
 		super.update(tmod);
+		context.checkAndResolveEntityCollisions();
 		var speed = context.moveSpeed;
 		if (goalX != -1) {
 			if (goalX > context.cx) {

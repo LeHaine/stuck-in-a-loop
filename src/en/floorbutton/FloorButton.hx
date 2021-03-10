@@ -14,6 +14,7 @@ class FloorButton extends Actionable {
 		super(x, y, optional, actionId);
 		this.sticks = sticks;
 		active = false;
+		hasCollision = false;
 		machine = new StateMachine<FloorButton>(this);
 		machine.addState(new FloorButtonDownState());
 		machine.addState(new FloorButtonUpState());
