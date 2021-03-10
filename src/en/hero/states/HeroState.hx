@@ -18,6 +18,7 @@ class HeroState extends State<Hero> {
 			var speed = context.speed * dist * tmod;
 			context.dx += Math.cos(angle) * speed;
 			context.dy += Math.sin(angle) * speed;
+			context.dir = M.sign(Math.cos(context.ca.leftAngle()));
 		} else {
 			context.dx *= Math.pow(0.6, tmod);
 			context.dy *= Math.pow(0.6, tmod);

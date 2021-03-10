@@ -12,6 +12,7 @@ class HeroRunState extends HeroState {
 
 	override function begin() {
 		super.begin();
+		context.spr.anim.playAndLoop("heroRun");
 	}
 
 	override function update(tmod: Float) {
