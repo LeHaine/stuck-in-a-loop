@@ -152,6 +152,9 @@ class Entity {
 	public var sprOffX = 0.;
 	public var sprOffY = 0.;
 
+	public var shadowOffX = 0.;
+	public var shadowOffY = 0.;
+
 	/** Entity visibility **/
 	public var entityVisible = true;
 
@@ -364,7 +367,7 @@ class Entity {
 		disableShadow();
 		shadow = new HSprite(spr.lib);
 		game.scroller.add(shadow, Const.DP_BG);
-		shadow.setCenterRatio(pivotX, pivotY);
+		shadow.setCenterRatio(pivotX, 1);
 		shadow.color.r = 0;
 		shadow.color.g = 0;
 		shadow.color.b = 0;
@@ -679,10 +682,13 @@ class Entity {
 
 		if (shadow != null) {
 			shadow.set(spr.lib, spr.groupName, spr.frame);
-			shadow.x = centerX;
-			shadow.y = bottom - 2 + zr * Const.GRID * 0.3;
-			shadow.scaleY = -0.4 - 0.3 * zr;
-			shadow.visible = !(level.hasCollision(cx, cy + 1) && yr >= 0.5);
+			shadow.x = centerX + shadowOffX;
+			shadow.y = (bottom - 2 + zr * Const.GRID * 0.3) + shadowOffY;
+			var scaleRatio = 1.;
+			if (level.hasCollision(cx, cy + 1) && yr >= 0.5) {
+				scaleRatio = 1.5 - yr;
+			}
+			shadow.scaleY = scaleRatio * (-0.4 - 0.3 * zr);
 		}
 
 		// Debug bounds

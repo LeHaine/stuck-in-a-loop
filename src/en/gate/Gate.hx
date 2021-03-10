@@ -29,6 +29,7 @@ class Gate extends Actionable {
 		zPriorityOffset = 0;
 		setSpriteOffset();
 		if (alignment == Horizontal) {
+			shadowOffY = -2;
 			if (opened) {
 				spr.set("gateOpened_h");
 			} else {
