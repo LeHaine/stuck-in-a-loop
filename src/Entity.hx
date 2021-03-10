@@ -153,7 +153,7 @@ class Entity {
 	public var sprOffY = 0.;
 
 	public var shadowOffX = 0.;
-	public var shadowOffY = 0.;
+	public var shadowOffY = -2.;
 
 	/** Entity visibility **/
 	public var entityVisible = true;
@@ -683,7 +683,7 @@ class Entity {
 		if (shadow != null) {
 			shadow.set(spr.lib, spr.groupName, spr.frame);
 			shadow.x = centerX + shadowOffX;
-			shadow.y = (bottom - 2 + zr * Const.GRID * 0.3) + shadowOffY;
+			shadow.y = bottom + shadowOffY + zr * Const.GRID * 0.3;
 			var scaleRatio = 1.;
 			if (level.hasCollision(cx, cy + 1) && yr >= 0.5) {
 				scaleRatio = 1.5 - yr;
