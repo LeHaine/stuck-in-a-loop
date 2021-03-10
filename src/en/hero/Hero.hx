@@ -2,8 +2,6 @@ package en.hero;
 
 import en.hero.states.HeroInteractState;
 import dn.DecisionHelper;
-import h2d.Graphics;
-import h3d.Vector;
 import en.hero.states.HeroRunState;
 import en.hero.states.HeroIdleState;
 

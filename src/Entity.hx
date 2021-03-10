@@ -170,6 +170,7 @@ class Entity {
 
 	// Visual components
 	public var spr: HSprite;
+	public var shadow: Null<HSprite>;
 	public var baseColor: h3d.Vector;
 	public var blinkColor: h3d.Vector;
 	public var colorMatrix: h3d.Matrix;
@@ -243,8 +244,10 @@ class Entity {
 		spr.colorMatrix = colorMatrix = h3d.Matrix.I();
 		spr.setCenterRatio(pivotX, pivotY);
 
-		if (ui.Console.ME.hasFlag("bounds"))
+		if (ui.Console.ME.hasFlag("bounds")) {
 			enableDebugBounds();
+		}
+		enableShadow();
 	}
 
 	function set_pivotX(v) {
@@ -348,6 +351,24 @@ class Entity {
 			sprOffX = ox;
 			sprOffY = oy;
 		}
+	}
+
+	public function disableShadow() {
+		if (shadow != null) {
+			shadow.remove();
+			shadow = null;
+		}
+	}
+
+	public function enableShadow() {
+		disableShadow();
+		shadow = new HSprite(spr.lib);
+		game.scroller.add(shadow, Const.DP_BG);
+		shadow.setCenterRatio(pivotX, pivotY);
+		shadow.color.r = 0;
+		shadow.color.g = 0;
+		shadow.color.b = 0;
+		shadow.alpha = 0.6;
 	}
 
 	public function is<T: Entity>(c: Class<T>) return Std.isOfType(this, c);
@@ -654,6 +675,13 @@ class Entity {
 		if (debugLabel != null) {
 			debugLabel.x = Std.int(attachX - debugLabel.textWidth * 0.5);
 			debugLabel.y = Std.int(attachY + 1);
+		}
+
+		if (shadow != null) {
+			shadow.set(spr.lib, spr.groupName, spr.frame);
+			shadow.x = centerX;
+			shadow.y = bottom - 2 + zr * Const.GRID * 0.3;
+			shadow.scaleY = -0.4 - 0.3 * zr;
 		}
 
 		// Debug bounds
