@@ -151,6 +151,13 @@ leverUp0
   orig: 16, 15
   offset: 0, 0
   index: -1
+leverUp1
+  rotate: false
+  xy: 1, 82
+  size: 16, 14
+  orig: 16, 14
+  offset: 0, 0
+  index: -1
 pixel
   rotate: false
   xy: 62, 69
