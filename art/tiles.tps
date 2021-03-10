@@ -4,7 +4,7 @@
         <key>fileFormatVersion</key>
         <int>4</int>
         <key>texturePackerVersion</key>
-        <string>5.4.0</string>
+        <string>5.5.0</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
@@ -169,7 +169,7 @@
             <key>trimMargin</key>
             <uint>1</uint>
             <key>trimMode</key>
-            <enum type="SpriteSettings::TrimMode">Crop</enum>
+            <enum type="SpriteSettings::TrimMode">None</enum>
             <key>tracerTolerance</key>
             <int>200</int>
             <key>heuristicMask</key>
@@ -181,6 +181,32 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
+            <key type="filename">export_tiles/block0.png</key>
+            <key type="filename">export_tiles/floorbuttonDown0.png</key>
+            <key type="filename">export_tiles/floorbuttonUp0.png</key>
+            <key type="filename">export_tiles/fxCircle0.png</key>
+            <key type="filename">export_tiles/heroIdle0.png</key>
+            <key type="filename">export_tiles/heroIdle1.png</key>
+            <key type="filename">export_tiles/heroRun0.png</key>
+            <key type="filename">export_tiles/heroRun1.png</key>
+            <key type="filename">export_tiles/heroRun2.png</key>
+            <key type="filename">export_tiles/leverLeft0.png</key>
+            <key type="filename">export_tiles/leverRight0.png</key>
+            <key type="filename">export_tiles/leverUp0.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>4,4,8,8</rect>
+                <key>scale9Paddings</key>
+                <rect>4,4,8,8</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">export_tiles/empty.png</key>
             <key type="filename">export_tiles/pixel.png</key>
             <struct type="IndividualSpriteSettings">
@@ -194,21 +220,6 @@
                 <rect>0,0,1,1</rect>
                 <key>scale9Paddings</key>
                 <rect>0,0,1,1</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">export_tiles/fxCircle0.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>4,4,8,8</rect>
-                <key>scale9Paddings</key>
-                <rect>4,4,8,8</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -314,6 +325,24 @@
                 <rect>8,3,17,5</rect>
                 <key>scale9Paddings</key>
                 <rect>8,3,17,5</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">export_tiles/gateClosed_h0.png</key>
+            <key type="filename">export_tiles/gateClosed_v0.png</key>
+            <key type="filename">export_tiles/gateOpened_h0.png</key>
+            <key type="filename">export_tiles/gateOpened_v0.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>4,6,8,11</rect>
+                <key>scale9Paddings</key>
+                <rect>4,6,8,11</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
