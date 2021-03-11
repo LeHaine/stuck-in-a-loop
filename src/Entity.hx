@@ -452,6 +452,9 @@ class Entity {
 		if (!destroyed) {
 			destroyed = true;
 			GC.push(this);
+			if (shadow != null) {
+				shadow.remove();
+			}
 		}
 	}
 
