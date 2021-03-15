@@ -48,7 +48,7 @@ fxDot0
   index: -1
 fxImpact0
   rotate: false
-  xy: 1, 80
+  xy: 1, 114
   size: 15, 9
   orig: 15, 9
   offset: 0, 0
@@ -177,6 +177,34 @@ pixel
   xy: 125, 5
   size: 1, 1
   orig: 1, 1
+  offset: 0, 0
+  index: -1
+portalGreen0
+  rotate: false
+  xy: 1, 80
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+portalGreen1
+  rotate: false
+  xy: 1, 97
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+portalRed0
+  rotate: false
+  xy: 18, 80
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+portalRed1
+  rotate: false
+  xy: 18, 97
+  size: 16, 16
+  orig: 16, 16
   offset: 0, 0
   index: -1
 uiBar
