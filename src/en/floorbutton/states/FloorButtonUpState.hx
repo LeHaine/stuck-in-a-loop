@@ -2,6 +2,8 @@ package en.floorbutton.states;
 
 class FloorButtonUpState extends FloorButtonState {
 
+	var initial = true;
+
 	public function new() {
 		super();
 	}
@@ -13,5 +15,15 @@ class FloorButtonUpState extends FloorButtonState {
 	override function begin() {
 		super.begin();
 		context.spr.set("floorbuttonUp");
+		if (initial) {
+			initial = !initial;
+		} else {
+			context.completed = !context.completed;
+		}
+	}
+
+	override function end() {
+		super.end();
+		context.completed = !context.completed;
 	}
 }
