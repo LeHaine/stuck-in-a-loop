@@ -33,5 +33,6 @@ class Assets {
 		tiles.defineAnim("heroRun", "0(12), 1(7), 2(12), 1(7)");
 		tiles.defineAnim("portalRed", "0-1(15)");
 		tiles.defineAnim("portalGreen", "0-1(15)");
+		tiles.defineAnim("portalBlue", "0-1(15)");
 	}
 }
