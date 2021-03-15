@@ -9,6 +9,9 @@ class HeroState extends State<Hero> {
 	}
 
 	private function calculateVelocity(tmod: Float) {
+		if (context.hasAffect(Stun)) {
+			return;
+		}
 		var ca = context.ca;
 
 		if (ca.leftDist() > 0) {
