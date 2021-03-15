@@ -10,8 +10,8 @@ class FloorButton extends Actionable {
 
 	private var machine: StateMachine<FloorButton>;
 
-	public function new(x, y, sticks, optional, actionId) {
-		super(x, y, optional, actionId);
+	public function new(x, y, sticks, optional, actionIds) {
+		super(x, y, actionIds, null, optional);
 		this.sticks = sticks;
 		active = false;
 		hasCollision = false;

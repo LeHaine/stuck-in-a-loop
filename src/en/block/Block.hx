@@ -17,7 +17,7 @@ class Block extends Actionable {
 	private var machine: StateMachine<Block>;
 
 	public function new(cx, cy, optional, actionId, reactionId, goal: LPoint) {
-		super(cx, cy, optional, actionId, reactionId);
+		super(cx, cy, actionId, reactionId, optional);
 		this.goal = goal;
 		pivotY = 0.5;
 		yr = 0.5;

@@ -5,26 +5,28 @@ class Actionable extends Interactable {
 	public static var ALL: Array<Actionable> = [];
 
 	public var completed = false;
-	public var optionial = false;
-	public var actionId = -1;
-	public var reactionId = -1;
+	public var optionial = true;
+	public var actionIds: Array<Int>;
+	public var reactionIds: Array<Int>;
 
-	public function new(x, y, optional = false, actionId = -1, reactionId = -1) {
+	public function new(x, y, actionIds, reactionIds, optional = true) {
 		super(x, y);
 		this.optionial = optional;
-		this.actionId = actionId;
-		this.reactionId = reactionId;
+		this.actionIds = actionIds;
+		this.reactionIds = reactionIds;
 		ALL.push(this);
 	}
 
 	override function interact(from: Entity) {
 		super.interact(from);
-		if (actionId == -1) {
+		if (actionIds == null || actionIds.length == 0) {
 			return;
 		}
 		for (actionable in ALL) {
-			if (actionable.reactionId == actionId) {
-				actionable.react();
+			for (actionId in actionIds) {
+				if (actionable.reactionIds != null && actionable.reactionIds.contains(actionId)) {
+					actionable.react();
+				}
 			}
 		}
 	}

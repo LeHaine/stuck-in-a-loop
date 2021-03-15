@@ -57,7 +57,9 @@ class Game extends Process {
 		hud = new ui.Hud();
 		camera = new Camera();
 
-		startLevel(worldData.levels[0], 0);
+		var startingLevelIdx = 1;
+
+		startLevel(worldData.levels[startingLevelIdx], startingLevelIdx);
 	}
 
 	/** Load a level **/
@@ -80,19 +82,19 @@ class Game extends Process {
 			new Portal(portal.cx, portal.cy, portal.f_PortalType, teleportPoint, portal.f_isLevelExit);
 		}
 		for (lever in l.l_Entities.all_Lever) {
-			new Lever(lever.cx, lever.cy, lever.f_optional, lever.f_action_id);
+			new Lever(lever.cx, lever.cy, lever.f_optional, lever.f_action_ids);
 		}
 
 		for (block in l.l_Entities.all_Block) {
-			new Block(block.cx, block.cy, block.f_optional, -1, -1, LPoint.fromCase(block.f_Goal[0].cx, block.f_Goal[0].cy));
+			new Block(block.cx, block.cy, block.f_optional, null, null, LPoint.fromCase(block.f_Goal[0].cx, block.f_Goal[0].cy));
 		}
 
 		for (gate in l.l_Entities.all_Gate) {
-			new Gate(gate.cx, gate.cy, gate.f_opened, gate.f_alignment, gate.f_optional, gate.f_reaction_id);
+			new Gate(gate.cx, gate.cy, gate.f_opened, gate.f_alignment, gate.f_optional, gate.f_reaction_ids);
 		}
 
 		for (floorButton in l.l_Entities.all_FloorButton) {
-			new FloorButton(floorButton.cx, floorButton.cy, floorButton.f_sticks, floorButton.f_optional, floorButton.f_action_id);
+			new FloorButton(floorButton.cx, floorButton.cy, floorButton.f_sticks, floorButton.f_optional, floorButton.f_action_ids);
 		}
 		camera.recenter();
 		hud.onLevelStart();
