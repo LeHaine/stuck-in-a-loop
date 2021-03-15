@@ -17,28 +17,31 @@ class BlockMovingState extends State<Block> {
 		super.begin();
 		goalX = context.cx + context.pushX;
 		goalY = context.cy + context.pushY;
-		while (context.level.hasCollision(goalX, goalY)) {
-			if (context.pushX != 0) {
-				if (context.pushX > 0) {
-					goalX -= 1;
+		var xDir = M.sign(context.pushX);
+		var yDir = M.sign(context.pushY);
+		var x = context.cx;
+		var y = context.cy;
+		if (goalX == context.cx && goalY == context.cy) {
+			goalX = -1;
+			goalY = -1;
+			context.pushX = 0;
+			context.pushY = 0;
+		} else {
+			while (x != goalX || y != goalY) {
+				if (xDir != 0) {
+					x += xDir;
 				} else {
-					goalX += 1;
+					y += yDir;
 				}
-			} else {
-				if (context.pushY > 0) {
-					goalY -= 1;
-				} else {
-					goalY += 1;
-				}
-			}
 
-			if (goalX == context.cx && goalY == context.cy) {
-				goalX = -1;
-				goalY = -1;
-				context.pushX = 0;
-				context.pushY = 0;
-				break;
+				if (context.level.hasCollision(x, y)) {
+					x -= xDir;
+					y -= yDir;
+					break;
+				}
 			}
+			goalX = x;
+			goalY = y;
 		}
 
 		if (goalX != -1 && goalY != -1) {
