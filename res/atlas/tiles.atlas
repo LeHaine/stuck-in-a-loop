@@ -179,30 +179,44 @@ pixel
   orig: 1, 1
   offset: 0, 0
   index: -1
-portalGreen0
+portalBlue0
   rotate: false
   xy: 1, 80
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
-portalGreen1
+portalBlue1
   rotate: false
   xy: 1, 97
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
-portalRed0
+portalGreen0
   rotate: false
   xy: 18, 80
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
-portalRed1
+portalGreen1
   rotate: false
   xy: 18, 97
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+portalRed0
+  rotate: false
+  xy: 35, 70
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+portalRed1
+  rotate: false
+  xy: 35, 87
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
