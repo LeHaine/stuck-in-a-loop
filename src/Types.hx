@@ -7,4 +7,10 @@ enum Alignment {
 	Horizontal;
 }
 
+enum PortalType {
+	Green;
+	Red;
+	Blue;
+}
+
 enum LevelMark {}

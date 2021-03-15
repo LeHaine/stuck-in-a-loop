@@ -1,7 +1,5 @@
 package en.block.states;
 
-import hl.I64;
-
 class BlockMovingState extends State<Block> {
 
 	private var goalX: Int;

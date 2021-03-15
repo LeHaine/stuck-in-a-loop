@@ -1,3 +1,5 @@
+import ldtk.Point;
+import en.portal.Portal;
 import en.floorbutton.FloorButton;
 import en.gate.Gate;
 import en.block.Block;
@@ -73,8 +75,9 @@ class Game extends Process {
 		hero = new Hero(heroData.cx, heroData.cy);
 		level.startPoint = LPoint.fromCase(heroData.cx, heroData.cy);
 
-		for (exit in l.l_Entities.all_Exit) {
-			new Exit(exit.cx, exit.cy);
+		for (portal in l.l_Entities.all_Portal) {
+			var teleportPoint = portal.f_teleportPoints.length != 0 ? LPoint.fromCase(portal.f_teleportPoints[0].cx, portal.f_teleportPoints[0].cy) : null;
+			new Portal(portal.cx, portal.cy, portal.f_PortalType, teleportPoint, portal.f_isLevelExit);
 		}
 		for (lever in l.l_Entities.all_Lever) {
 			new Lever(lever.cx, lever.cy, lever.f_optional, lever.f_action_id);
