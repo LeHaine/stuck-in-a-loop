@@ -1,5 +1,6 @@
 # Haxe Game Template
 
+Based from [Deepnights](https://deepnight.net)'s [GameBase](https://github.com/deepnight/gameBase).
 ## Setup
 
 Install all haxelibs:
