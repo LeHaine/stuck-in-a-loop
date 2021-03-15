@@ -1,5 +1,6 @@
 package en.block;
 
+import en.block.states.BlockTeleportingState;
 import en.block.states.BlockLockedInState;
 import en.block.states.BlockStationaryState;
 import en.block.states.BlockMovingState;
@@ -11,6 +12,7 @@ class Block extends Actionable {
 	public var pushX: Int;
 	public var pushY: Int;
 	public var moveSpeed = 0.02;
+	public var teleporting = false;
 
 	private var machine: StateMachine<Block>;
 
@@ -21,6 +23,7 @@ class Block extends Actionable {
 		yr = 0.5;
 		machine = new StateMachine<Block>(this);
 		machine.addState(new BlockLockedInState());
+		machine.addState(new BlockTeleportingState());
 		machine.addState(new BlockMovingState());
 		machine.addState(new BlockStationaryState());
 		machine.onStateChanged = (stateName) -> {
@@ -58,6 +61,14 @@ class Block extends Actionable {
 		} else {
 			pushY = 0;
 		}
+	}
+
+	override public function setPosCase(x: Int, y: Int) {
+		setExtraCollision(false);
+		teleporting = true;
+		super.setPosCase(x, y);
+		yr = 0.5;
+		setExtraCollision(true);
 	}
 
 	private inline function caseDirToX(to: Entity) return if (to.cx < cx) -1 else if (to.cx > cx) 1 else 0;

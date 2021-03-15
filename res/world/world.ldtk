@@ -1187,6 +1187,39 @@
 									}]
 								}
 							]
+						},
+						{
+							"__identifier": "Portal",
+							"__grid": [17,16],
+							"__pivot": [0.5,0.5],
+							"__tile": { "tilesetUid": 68, "srcRect": [16,0,16,16] },
+							"width": 16,
+							"height": 16,
+							"defUid": 21,
+							"px": [280,264],
+							"fieldInstances": [
+								{ "__identifier": "isLevelExit", "__value": false, "__type": "Bool", "defUid": 61, "realEditorValues": [] },
+								{
+									"__identifier": "teleportPoints",
+									"__value": [{ "cx": 17, "cy": 13 }],
+									"__type": "Array<Point>",
+									"defUid": 63,
+									"realEditorValues": [{
+										"id": "V_String",
+										"params": ["17,13"]
+									}]
+								},
+								{
+									"__identifier": "PortalType",
+									"__value": "Blue",
+									"__type": "ExternEnum.PortalType",
+									"defUid": 67,
+									"realEditorValues": [{
+										"id": "V_String",
+										"params": ["Blue"]
+									}]
+								}
+							]
 						}
 					]
 				},
