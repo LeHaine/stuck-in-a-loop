@@ -42,11 +42,17 @@ class BlockMovingState extends State<Block> {
 				break;
 			}
 		}
+
+		if (goalX != -1 && goalY != -1) {
+			context.level.setExtraCollision(goalX, goalY, true);
+			context.hasCollision = false;
+		} else {
+			context.setExtraCollision(true);
+		}
 	}
 
 	override function update(tmod: Float) {
 		super.update(tmod);
-		context.checkAndResolveEntityCollisions();
 		var speed = context.moveSpeed;
 		if (goalX != -1) {
 			if (goalX > context.cx) {
@@ -75,5 +81,10 @@ class BlockMovingState extends State<Block> {
 				context.pushY = 0;
 			}
 		}
+	}
+
+	override function end() {
+		super.end();
+		context.hasCollision = true;
 	}
 }

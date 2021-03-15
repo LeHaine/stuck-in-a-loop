@@ -228,7 +228,8 @@ class Entity {
 	public var prevFrameattachY: Float = -Const.INFINITE;
 
 	var actions: Array<{id: String, cb: Void->Void, t: Float}> = [];
-	private var hasCollision = true;
+
+	public var hasCollision = true;
 
 	public function new(x: Int, y: Int) {
 		uid = Const.NEXT_UNIQ;

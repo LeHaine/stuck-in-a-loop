@@ -24,9 +24,8 @@ class Block extends Actionable {
 		machine.addState(new BlockMovingState());
 		machine.addState(new BlockStationaryState());
 		machine.onStateChanged = (stateName) -> {
-			#if debugFsm
-			var state = stateName.split(".").pop();
-			debug(state);
+			#if debug
+			debugFSM(stateName);
 			#end
 		}
 		labelText = Lang.t._("Push\nHold Shift for big push");
