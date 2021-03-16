@@ -30,6 +30,8 @@ class Level extends dn.Process {
 
 	inline function get_pxHei() return cHei * Const.GRID;
 
+	public var collisionLayers = [1, 2];
+
 	var extraCollison: Map<Int, Bool>;
 
 	public var data: World.World_Level;
@@ -93,7 +95,8 @@ class Level extends dn.Process {
 
 	/** Return TRUE if "Collisions" layer contains a collision value **/
 	public inline function hasCollision(cx, cy): Bool {
-		return !isValid(cx, cy) ? true : data.l_Collisions.getInt(cx, cy) == 1 || extraCollison.exists(coordId(cx, cy));
+		return !isValid(cx, cy) ? true : collisionLayers.contains(data.l_Collisions.getInt(cx, cy))
+			|| extraCollison.exists(coordId(cx, cy));
 	}
 
 	public function setExtraCollision(cx, cy, enabled: Bool) {
@@ -114,6 +117,7 @@ class Level extends dn.Process {
 		var tg = new h2d.TileGroup(tilesetSource, root);
 
 		data.l_Ground.render(tg);
+		data.l_Shadows.render(tg);
 		data.l_Collisions.render(tg);
 	}
 
