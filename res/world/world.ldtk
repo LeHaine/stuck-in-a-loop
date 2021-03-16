@@ -9,7 +9,7 @@
 		"url": "https://ldtk.io"
 	},
 	"jsonVersion": "0.8.1",
-	"nextUid": 70,
+	"nextUid": 73,
 	"worldLayout": "LinearHorizontal",
 	"worldGridWidth": 256,
 	"worldGridHeight": 256,
@@ -729,6 +729,75 @@
 						"id": "V_Bool",
 						"params": [ true ]
 					},
+					"textLangageMode": null
+				}
+			]
+		},
+		{
+			"identifier": "Text",
+			"uid": 70,
+			"tags": [],
+			"width": 40,
+			"height": 16,
+			"resizableX": false,
+			"resizableY": false,
+			"keepAspectRatio": false,
+			"fillOpacity": 1,
+			"lineOpacity": 1,
+			"hollow": false,
+			"color": "#B34343",
+			"renderMode": "Rectangle",
+			"showName": true,
+			"tilesetId": null,
+			"tileId": null,
+			"tileRenderMode": "FitInside",
+			"maxCount": 0,
+			"limitScope": "PerLevel",
+			"limitBehavior": "MoveLastOne",
+			"pivotX": 0.5,
+			"pivotY": 1,
+			"fieldDefs": [
+				{
+					"identifier": "value",
+					"__type": "String",
+					"uid": 71,
+					"type": "F_String",
+					"isArray": false,
+					"canBeNull": false,
+					"arrayMinLength": null,
+					"arrayMaxLength": null,
+					"editorDisplayMode": "ValueOnly",
+					"editorDisplayPos": "Center",
+					"editorAlwaysShow": true,
+					"editorCutLongValues": false,
+					"min": null,
+					"max": null,
+					"regex": null,
+					"acceptFileTypes": null,
+					"defaultOverride": {
+						"id": "V_String",
+						"params": ["Go ahead and try to escape."]
+					},
+					"textLangageMode": null
+				},
+				{
+					"identifier": "color",
+					"__type": "Color",
+					"uid": 72,
+					"type": "F_Color",
+					"isArray": false,
+					"canBeNull": false,
+					"arrayMinLength": null,
+					"arrayMaxLength": null,
+					"editorDisplayMode": "Hidden",
+					"editorDisplayPos": "Above",
+					"editorAlwaysShow": false,
+					"editorCutLongValues": true,
+					"min": null,
+					"max": null,
+					"regex": null,
+					"acceptFileTypes": null,
+					"defaultOverride": { "id": "V_Int", "params": [12398336] },
 					"textLangageMode": null
 				}
 			]
@@ -2547,6 +2616,26 @@
 										"id": "V_Bool",
 										"params": [ false ]
 									}]
+								}
+							]
+						},
+						{
+							"__identifier": "Text",
+							"__grid": [13,23],
+							"__pivot": [0.5,1],
+							"__tile": null,
+							"width": 40,
+							"height": 16,
+							"defUid": 70,
+							"px": [216,384],
+							"fieldInstances": [
+								{ "__identifier": "value", "__value": "Go ahead and try to escape.", "__type": "String", "defUid": 71, "realEditorValues": [] },
+								{
+									"__identifier": "color",
+									"__value": "#BD2F00",
+									"__type": "Color",
+									"defUid": 72,
+									"realEditorValues": [{ "id": "V_Int", "params": [12398336] }]
 								}
 							]
 						}

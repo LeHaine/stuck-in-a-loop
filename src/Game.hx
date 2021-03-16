@@ -96,6 +96,11 @@ class Game extends Process {
 		for (floorButton in l.l_Entities.all_FloorButton) {
 			new FloorButton(floorButton.cx, floorButton.cy, floorButton.f_sticks, floorButton.f_optional, floorButton.f_action_ids);
 		}
+
+		for (text in l.l_Entities.all_Text) {
+			new Text(text.cx, text.cy, text.f_value, text.f_color_int);
+		}
+
 		camera.recenter();
 		hud.onLevelStart();
 		Process.resizeAll();
