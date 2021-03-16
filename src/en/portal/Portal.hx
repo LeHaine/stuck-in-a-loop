@@ -39,10 +39,10 @@ class Portal extends Entity {
 
 	public function checkAndTeleportEntities() {
 		for (entity in Entity.ALL) {
-			if (entity != this && entity.atEntity(this) && !entity.cd.hasSetMs("recentlyTeleported", 225)) {
+			if (entity != this && entity.atEntity(this) && !entity.cd.hasSetMs("recentlyTeleported", 500)) {
 				entity.dx = 0;
 				entity.dy = 0;
-				entity.setAffectS(Stun, 0.225);
+				entity.setAffectS(Stun, 0.5);
 				teleportEntity(entity);
 			}
 		}
