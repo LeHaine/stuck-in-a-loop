@@ -10,8 +10,8 @@ class FloorButton extends Actionable {
 
 	private var machine: StateMachine<FloorButton>;
 
-	public function new(x, y, sticks, optional, actionIds) {
-		super(x, y, actionIds, null, optional);
+	public function new(x, y, sticks, optional, actionIds, reactionIds) {
+		super(x, y, actionIds, reactionIds, optional);
 		this.sticks = sticks;
 		active = false;
 		hasCollision = false;
@@ -29,6 +29,11 @@ class FloorButton extends Actionable {
 	override function update() {
 		super.update();
 		machine.update(tmod);
+	}
+
+	override function react() {
+		super.react();
+		sticks = !sticks;
 	}
 
 	public function getEntityStandingOnMe() {
