@@ -57,7 +57,7 @@ class Game extends Process {
 		hud = new ui.Hud();
 		camera = new Camera();
 
-		var startingLevelIdx = 4;
+		var startingLevelIdx = 5;
 
 		startLevel(worldData.levels[startingLevelIdx], startingLevelIdx);
 	}
@@ -86,7 +86,8 @@ class Game extends Process {
 		}
 
 		for (block in l.l_Entities.all_Block) {
-			new Block(block.cx, block.cy, block.f_optional, null, null, LPoint.fromCase(block.f_Goal[0].cx, block.f_Goal[0].cy));
+			var goal = if (block.f_Goal.length == 0) null else LPoint.fromCase(block.f_Goal[0].cx, block.f_Goal[0].cy);
+			new Block(block.cx, block.cy, block.f_optional, null, null, goal);
 		}
 
 		for (gate in l.l_Entities.all_Gate) {

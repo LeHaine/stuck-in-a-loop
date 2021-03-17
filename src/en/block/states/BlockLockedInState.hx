@@ -7,7 +7,7 @@ class BlockLockedInState extends State<Block> {
 	}
 
 	override function reason(): Bool {
-		return context.goal.cx == context.cx && context.goal.cy == context.cy;
+		return context.goal != null && context.goal.cx == context.cx && context.goal.cy == context.cy;
 	}
 
 	override function begin() {
