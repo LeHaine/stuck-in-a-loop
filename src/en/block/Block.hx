@@ -21,6 +21,7 @@ class Block extends Actionable {
 		this.goal = goal;
 		pivotY = 0.5;
 		yr = 0.5;
+		focusRange = 1.5;
 		machine = new StateMachine<Block>(this);
 		machine.addState(new BlockLockedInState());
 		machine.addState(new BlockTeleportingState());
