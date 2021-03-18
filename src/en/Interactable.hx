@@ -25,7 +25,7 @@ class Interactable extends Entity {
 
 	public var active: Bool;
 
-	public var focusRange = 2;
+	public var focusRange = 2.;
 
 	public var onFocus: Null<() -> Void>;
 	public var onUnfocus: Null<() -> Void>;

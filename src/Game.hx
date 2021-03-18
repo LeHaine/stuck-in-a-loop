@@ -57,7 +57,7 @@ class Game extends Process {
 		hud = new ui.Hud();
 		camera = new Camera();
 
-		var startingLevelIdx = 5;
+		var startingLevelIdx = 6;
 
 		startLevel(worldData.levels[startingLevelIdx], startingLevelIdx);
 	}
@@ -110,6 +110,11 @@ class Game extends Process {
 
 	public function startNextLevel() {
 		var idx = level.levelIdx + 1;
+		startLevel(worldData.levels[idx], idx);
+	}
+
+	public function resetLevel() {
+		var idx = level.levelIdx;
 		startLevel(worldData.levels[idx], idx);
 	}
 
@@ -264,7 +269,7 @@ class Game extends Process {
 
 			// Restart whole game
 			if (ca.selectPressed())
-				Main.ME.startGame();
+				resetLevel();
 		}
 	}
 }
