@@ -20,7 +20,7 @@ class FloorButtonUpState extends FloorButtonState {
 		} else {
 			context.completed = !context.completed;
 		}
-		Assets.SLIB.floor_button0().playOnGroup(Const.HERO_ACTION, 1);
+		Assets.SLIB.floorbutton0().playOnGroup(Const.HERO_ACTION, 1);
 	}
 
 	override function end() {
