@@ -21,7 +21,6 @@ class FloorButtonDownState extends FloorButtonState {
 		lastEntity = context.entityOnMe;
 		context.interact(lastEntity);
 		context.spr.set("floorbuttonDown");
-		Assets.SLIB.floorbutton0().playOnGroup(Const.HERO_ACTION, 1);
 	}
 
 	override function update(tmod: Float) {
@@ -40,5 +39,6 @@ class FloorButtonDownState extends FloorButtonState {
 		super.end();
 		context.interact(lastEntity);
 		lastEntity = null;
+		Assets.SLIB.floorbutton0().playOnGroup(Const.HERO_ACTION, 1);
 	}
 }
