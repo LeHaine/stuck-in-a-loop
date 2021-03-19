@@ -57,7 +57,7 @@ class Game extends Process {
 		hud = new ui.Hud();
 		camera = new Camera();
 
-		var startingLevelIdx = 10;
+		var startingLevelIdx = 1;
 
 		startLevel(worldData.levels[startingLevelIdx], startingLevelIdx);
 	}
@@ -110,6 +110,11 @@ class Game extends Process {
 
 	public function startNextLevel() {
 		var idx = level.levelIdx + 1;
+		if (idx > 10) {
+			idx = 1;
+			fx.endScreen(0x0, 1, 6, 1);
+			new Outro();
+		}
 		startLevel(worldData.levels[idx], idx);
 	}
 

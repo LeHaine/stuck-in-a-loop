@@ -30,7 +30,7 @@ class Main extends dn.Process {
 		#end
 
 		#if debug
-		delayer.addF(startIntro, 1);
+		startGame();
 		#else
 		delayer.addF(startIntro, 1);
 		#end

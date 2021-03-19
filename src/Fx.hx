@@ -149,6 +149,18 @@ class Fx extends dn.Process {
 		});
 	}
 
+	public function endScreen(c: UInt, a: Float, ?displayTime = 3., ?fadeOutTime = 1) {
+		var e = new h2d.Bitmap(h2d.Tile.fromColor(c, 1, 1, a));
+		game.scroller.add(e, Const.DP_FX_FRONT);
+		e.scaleX = game.w();
+		e.scaleY = game.h();
+		game.delayer.addS("show", () -> {
+			game.tw.createS(e.alpha, 0, fadeOutTime).end(() -> {
+				e.remove();
+			});
+		}, displayTime);
+	}
+
 	/**
 		A small sample to demonstrate how basic particles work. This example produces a small explosion of yellow dots that will fall and slowly fade to purple.
 
