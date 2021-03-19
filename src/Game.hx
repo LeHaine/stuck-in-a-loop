@@ -57,7 +57,7 @@ class Game extends Process {
 		hud = new ui.Hud();
 		camera = new Camera();
 
-		var startingLevelIdx = 8;
+		var startingLevelIdx = 10;
 
 		startLevel(worldData.levels[startingLevelIdx], startingLevelIdx);
 	}

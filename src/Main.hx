@@ -29,7 +29,11 @@ class Main extends dn.Process {
 		new dn.heaps.GameFocusHelper(scene, Assets.fontMedium);
 		#end
 
-		startGame();
+		#if debug
+		delayer.addF(startIntro, 1);
+		#else
+		delayer.addF(startIntro, 1);
+		#end
 	}
 
 	function initEngine() {
@@ -108,6 +112,10 @@ class Main extends dn.Process {
 		controller.bind(RB, Key.SHIFT);
 		controller.bind(SELECT, Key.R);
 		controller.bind(START, Key.N);
+	}
+
+	public function startIntro() {
+		new Intro();
 	}
 
 	/** Start game process **/
