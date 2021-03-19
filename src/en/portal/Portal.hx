@@ -33,6 +33,7 @@ class Portal extends Entity {
 	}
 
 	public function completeLevel() {
+		Assets.SLIB.portal0().playOnGroup(Const.HERO_ACTION, 1);
 		game.startNextLevel();
 		destroy();
 	}
@@ -54,6 +55,7 @@ class Portal extends Entity {
 		} else if (!isLevelExit) {
 			entity.setPosCase(teleportPoint.cx, teleportPoint.cy);
 		}
+		Assets.SLIB.portal0().playOnGroup(Const.HERO_ACTION, 1);
 	}
 
 	public function getPortalColorString() {

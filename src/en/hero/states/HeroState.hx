@@ -22,6 +22,10 @@ class HeroState extends State<Hero> {
 			context.dx += Math.cos(angle) * speed;
 			context.dy += Math.sin(angle) * speed;
 			context.dir = M.sign(Math.cos(context.ca.leftAngle()));
+
+			if (!context.cd.hasSetS("footstep", 0.35)) {
+				Assets.SLIB.footstep0().playOnGroup(Const.HERO_RUN, 0.5);
+			}
 		} else {
 			context.dx *= Math.pow(0.6, tmod);
 			context.dy *= Math.pow(0.6, tmod);

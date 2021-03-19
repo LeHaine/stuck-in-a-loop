@@ -37,6 +37,9 @@ class Const {
 		return SCALE;
 	}
 
+	public static final HERO_RUN = 2;
+	public static final HERO_ACTION = 3;
+
 	/** Game layers indexes **/
 	static var _inc = 0;
 

@@ -50,6 +50,7 @@ class BlockMovingState extends State<Block> {
 		} else {
 			context.setExtraCollision(true);
 		}
+		Assets.SLIB.block0().playOnGroup(Const.HERO_ACTION, 1);
 	}
 
 	override function update(tmod: Float) {

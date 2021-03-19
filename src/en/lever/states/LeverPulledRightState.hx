@@ -15,4 +15,9 @@ class LeverPulledRightState extends State<Lever> {
 		context.labelText = Lang.t._("Pull left");
 		context.spr.set("leverRight");
 	}
+
+	override function end() {
+		super.end();
+		Assets.SLIB.lever0().playOnGroup(Const.HERO_ACTION, 1);
+	}
 }
