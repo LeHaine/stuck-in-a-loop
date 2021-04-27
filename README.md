@@ -10,6 +10,9 @@ Play it [here](https://lehaine.com/mind-loop).
 
 Based from [Deepnights](https://deepnight.net)'s [GameBase](https://github.com/deepnight/gameBase).
 
+
+![gif](/screenshots/stuck-in-a-loop-7.gif)
+
 ## Setup
 
 Install all haxelibs:
